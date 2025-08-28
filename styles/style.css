@@ -184,7 +184,7 @@ body {
 
 
 /* ---------- Cards ---------- */
-.card-container {
+#card-container {
     max-width: 1370px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -404,7 +404,7 @@ body {
         order: 2;
     }
 
-    .card-container {
+    #card-container {
         order: 1;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -412,14 +412,14 @@ body {
 
 /* <= 900px: 2 cards per row */
 @media (max-width: 900px) {
-    .card-container {
+    #card-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 /* <= 560px: 1 card per row; compact header pills */
 @media (max-width: 560px) {
-    .card-container {
+    #card-container {
         grid-template-columns: 1fr;
     }
 
