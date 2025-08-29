@@ -29,6 +29,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Handle Copy Button Click
+    document.querySelectorAll(".btn-copy").forEach(btn => {
+        btn.addEventListener("click", function () {
+            let number = this.getAttribute("data-number");
+            navigator.clipboard.writeText(number).then(() => {
+                copyCount++;
+                copyCountElement.textContent = copyCount;
+
+
+            });
+        });
+    });
+
     // --- Call Functionality ---
     const coinCountEl = document.getElementById("coin-count");
     let coinCount = parseInt(coinCountEl.textContent, 10);
@@ -69,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <time>${currentTime}</time>
                 </div>
             `;
-            // historyList.prepend(li); // Add at the top of history
+
             historyList.appendChild(li);
         });
     });
@@ -91,21 +104,7 @@ document.querySelectorAll(".btn-call").forEach(btn => {
     });
 });
 
-// Handle Copy Button Click
-document.querySelectorAll(".btn-copy").forEach(btn => {
-    btn.addEventListener("click", function () {
-        let number = this.getAttribute("data-number");
-        navigator.clipboard.writeText(number).then(() => {
-            copyCount++;
-            copyCountElement.textContent = copyCount;
-
-            // Add to history
-            let li = document.createElement("li");
-            li.textContent = `Copied: ${number}`;
-            historyList.appendChild(li);
-        });
-    });
-});
+// Call history cleared
 
 document.addEventListener("DOMContentLoaded", () => {
     const clearBtn = document.getElementById("btn-clear");

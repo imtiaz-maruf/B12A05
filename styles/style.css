@@ -4,17 +4,6 @@
     box-sizing: border-box;
 }
 
-/* :root {
-    --green: #00A63E;
-    --dk1: #013223;
-    --dk2: #006747;
-    --text: #111111;
-    --muted: #5C5C5C;
-    --bg: #F2F2F2;
-    --card: #FFFFFF;
-    --line: #E7E9E8;
-} */
-
 html,
 body {
     height: 100%;
@@ -25,36 +14,6 @@ body {
     background: #F5FFF6;
 }
 
-.hind-madurai-light {
-    font-family: "Hind Madurai", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-.hind-madurai-regular {
-    font-family: "Hind Madurai", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.hind-madurai-medium {
-    font-family: "Hind Madurai", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.hind-madurai-semibold {
-    font-family: "Hind Madurai", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.hind-madurai-bold {
-    font-family: "Hind Madurai", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
 /* ---------- Header ---------- */
 .header-wrapper {
     background: #fff;
@@ -63,7 +22,8 @@ body {
     justify-content: space-between;
     gap: 16px;
     padding: 24px 60px;
-    /* box-shadow: 0 1px 4px rgba(0, 0, 0, .06); */
+    position: sticky;
+    top: 0;
 }
 
 .header-left {
@@ -415,6 +375,11 @@ body {
     #card-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .header-wrapper {
+        flex-direction: column;
+    }
+
 }
 
 /* <= 560px: 1 card per row; compact header pills */
@@ -427,19 +392,72 @@ body {
         align-items: flex-start;
     }
 
-    .header-left h2 {
-        font-size: 18px;
+    .header-wrapper {
+        flex-direction: column;
     }
 
-    .pill {
-        padding: 8px 12px;
+    .header-left h2 {
+        font-size: 14px;
     }
 
     .banner h2 {
-        font-size: 26px;
+        font-size: 20px;
     }
 
     .banner p {
         font-size: 14px;
+    }
+
+    .top-right-btns1 {
+        min-width: 100px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 0px;
+        border-radius: 50px;
+        background: rgba(65, 255, 107, .1);
+        font-weight: 800;
+        justify-content: center;
+
+    }
+
+    .top-right-btns2 {
+        min-width: 100px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 0px;
+        border-radius: 50px;
+        background: #00A63E;
+        color: #FFFFFF;
+        font-weight: 800;
+        justify-content: center;
+
+
+    }
+
+    .top-right-btns1 img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #love-count {
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    #coin-count {
+        color: black;
+        font-size: 16px;
+        font-weight: bold
+    }
+
+    #copy-count {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
     }
 }
